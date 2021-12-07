@@ -1,0 +1,6 @@
+fully_merged_rows = cursor.execute("SELECT records.id, records.age, workclasses.name, education_levels.name, records.education_num, marital_statuses.name, occupations.name, 
+relationships.name, races.name, sexes.name, records.capital_gain, records.capital_loss, records.hours_week, countries.name, records.over_50k FROM records INNER JOIN workclasses 
+ON records.workclass_id = workclasses.id INNER JOIN education_levels ON records.education_level_id = education_levels.id INNER JOIN marital_statuses ON 
+records.marital_status_id = marital_statuses.id INNER JOIN occupations ON records.occupation_id = occupations.id INNER JOIN relationships ON 
+records.relationship_id = relationships.id INNER JOIN races ON records.race_id = races.id INNER JOIN sexes ON records.sex_id = sexes.id INNER JOIN countries 
+ON records.country_id = countries.id").fetchall()
